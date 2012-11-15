@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Timers;
+
+
 
 namespace gdipath
 {
@@ -15,7 +18,16 @@ namespace gdipath
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            mainForm mainForm = new mainForm();
+            mainForm.Show();
+
+            while (mainForm.Created)
+            {
+                Application.DoEvents();
+               
+            }
         }
+
     }
 }
