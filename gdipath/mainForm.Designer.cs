@@ -20,6 +20,8 @@
             base.Dispose(disposing);
         }
 
+        //Input input = new Input();
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -31,6 +33,7 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pic = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,11 +43,10 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runPathfinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pic = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,14 +66,24 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(355, 292);
+            this.panel1.Size = new System.Drawing.Size(538, 377);
             this.panel1.TabIndex = 1;
+            // 
+            // pic
+            // 
+            this.pic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pic.Location = new System.Drawing.Point(0, 0);
+            this.pic.Name = "pic";
+            this.pic.Size = new System.Drawing.Size(538, 377);
+            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pic.TabIndex = 1;
+            this.pic.TabStop = false;
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 270);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 355);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(355, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(538, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -101,7 +113,7 @@
             this.runToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(355, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(538, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -116,7 +128,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // runToolStripMenuItem
@@ -133,36 +145,28 @@
             this.runPathfinderToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.runPathfinderToolStripMenuItem.Text = "Run Pathfinder";
             // 
-            // pic
-            // 
-            this.pic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pic.Location = new System.Drawing.Point(0, 0);
-            this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(355, 292);
-            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pic.TabIndex = 1;
-            this.pic.TabStop = false;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 292);
+            this.ClientSize = new System.Drawing.Size(538, 377);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainForm";
-            this.Text = "Form1";
+            this.Text = "Pathfinding";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.SizeChanged += new System.EventHandler(this.mainForm_SizeChanged);
+            this.KeyDown += input.KeyDown;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

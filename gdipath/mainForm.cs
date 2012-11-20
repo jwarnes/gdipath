@@ -25,18 +25,32 @@ namespace gdipath
         Timer timer;
         #endregion
 
+
         GameStateManager manager;
+        private Input input;
         Graphics g;
+
+        #region API
+        public Input Input { get { return input; } set { input = value; } }
+        #endregion
 
         public mainForm()
         {
+            input = new Input();
             InitializeComponent();
             timer = new Timer();
             timer.Interval = (int)TargetElapsedTime.TotalMilliseconds;
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
 
-            manager = new GameStateManager();
+            manager = new GameStateManager(this);
+            manager.Add(new MenuState(manager));
+
+        }
+
+        private void Start()
+        {
+
         }
 
         void redrawGraphics()
@@ -80,6 +94,7 @@ namespace gdipath
         public void Process()
         {
             manager.Process();
+            input.ClearInput();
         }
 
         public void Draw()
@@ -99,5 +114,7 @@ namespace gdipath
         {
             redrawGraphics();
         }
+
+
     }
 }

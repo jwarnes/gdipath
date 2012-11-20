@@ -9,8 +9,16 @@ namespace gdipath
     class GameStateManager
     {
         protected List<GameState> states;
-        public GameStateManager()
+        protected mainForm game;
+
+        public mainForm Game
         {
+            get { return game; }
+        }
+
+        public GameStateManager(mainForm game)
+        {
+            this.game = game;
             states = new List<GameState>();
         }
 

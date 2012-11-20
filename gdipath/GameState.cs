@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,14 +27,25 @@ namespace gdipath
             this.manager = manager;
             IsPaused = false;
             IsVisible = true;
+
+            this.Load();
         }
-        
-        public abstract void Draw(Graphics g);
+
+        public abstract void Load();
+        public abstract void Input();
         public abstract void Process();
+        public abstract void Draw(Graphics g);
+        
 
         public void Kill()
         {
             manager.Remove(this);
+        }
+
+        public void ChangeState(GameState state)
+        {
+            manager.Add(state);
+            this.Kill();
         }
     }
 }
